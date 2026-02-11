@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Helen ❤️</title>
     <style>
-        /* General Page Styling */
         body {
-            background-color: #ffe4e1; /* Light pink background */
+            background-color: #ffe4e1;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -15,31 +14,37 @@
             height: 100vh;
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: background-color 0.8s ease; /* Smooth color change on click */
+            transition: background-color 0.8s ease;
             overflow: hidden;
         }
 
-        /* The white card container */
         .container {
             background: white;
             padding: 40px;
             border-radius: 30px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             text-align: center;
-            max-width: 400px;
+            max-width: 450px;
             width: 90%;
             z-index: 10;
         }
 
-        /* Styling for the photo of you two */
         .couple-photo {
-            width: 220px;
-            height: 220px;
+            width: 250px;
+            height: 250px;
             object-fit: cover;
             border-radius: 50%;
             border: 8px solid #ff69b4;
             margin-bottom: 20px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            /* This makes the photo gently pulse */
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
         }
 
         h1 {
@@ -48,17 +53,11 @@
             margin-bottom: 10px;
         }
 
-        p {
-            color: #ff1493;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
-        /* Button Layout */
         .buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
+            margin-top: 25px;
         }
 
         button {
@@ -70,63 +69,4 @@
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
-        }
-
-        button:hover {
-            transform: scale(1.1);
-            background-color: #ff1493;
-        }
-
-        /* The big "Success" message */
-        #response {
-            margin-top: 20px;
-            font-size: 2rem;
-            color: #ff1493;
-            display: none;
-            font-weight: bold;
-            animation: bounce 0.5s ease;
-        }
-
-        @keyframes bounce {
-            0% { transform: scale(0.5); }
-            100% { transform: scale(1); }
-        }
-
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <img src="us.png" alt="Us" class="couple-photo">
-        
-        <h1>Helen,</h1>
-        <p>Will you be my Valentine?</p>
-        
-        <div class="buttons" id="button-group">
-            <button onclick="sayYes()">YES</button>
-            <button onclick="sayYes()">YES</button>
-        </div>
-
-        <div id="response">I knew you'd say yes! 🥰🌹</div>
-    </div>
-
-    <script>
-        function sayYes() {
-            // Hide the buttons
-            document.getElementById('button-group').style.display = 'none';
-            // Show the "I knew you'd say yes" message
-            document.getElementById('response').style.display = 'block';
-            // Change background to a deeper romantic pink
-            document.body.style.backgroundColor = "#ffb6c1";
-            
-            // Optional: Alert box for extra impact
-            setTimeout(() => {
-                alert("Best decision ever! ❤️");
-            }, 500);
-        }
-    </script>
-
-</body>
-</html>
+            transition: transform 0.2s, background-color 0.
